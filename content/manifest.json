@@ -1,10 +1,49 @@
 {
-  "defaultNotes": {
-    "root": ["welcome.md", "custom-deploy.md"],
-    "python": ["python-in-notes.md", "python-examples.md"],
-    "projects": {
-      "work": ["project1.md", "project2.md"],
-      "personal": ["ideas.md"]
-    }
+"defaultNotes":{
+"root":["1 Welcome to the DHP.md","4 Guide for Instructors.md","2 PKM-WebNotes-Welcome.md","5 glossary.md","3 python-in-notes.md"],
+	"The DHPrimer":{
+	"1- Beginner Stream":["DH Beginner - 00 Start Here.md","DH Beginner - 01 What is DH and Why Code.md",
+"DH Beginner - 02 Your First Code.md",
+"DH Beginner - 03 Variables and Data Types.md",
+"DH Beginner - 04 Lists - Storing Multiple Items.md",
+"DH Beginner - 05 Creating a Sample Text File.md",
+"DH Beginner - 06 Reading Text Files.md",
+"DH Beginner - 07 Simple Text Analysis - Word Count.md",
+"DH Beginner - 08 Repeating Tasks with Loops (For Loop).md",
+"DH Beginner - 09 Basic Text Cleaning - Removing Punctuation.md",
+"DH Beginner - 10 Counting Word Frequencies.md",
+"DH Beginner - 11 Wrap-up and Next Steps.md",
+"DH Beginner - 12 Formative Assessment.md",
+"frankenstein-text.md"],
+	"2- Intermediate Stream":["DH Intermediate - 00 Start Here.md","DH Intermediate - 01 Working with Tabular Data - Intro to Pandas.md",
+"DH Intermediate - 02 Pandas for Data Manipulation.md",
+"DH Intermediate - 03 Introduction to Data Visualization - Matplotlib & Seaborn.md",
+"DH Intermediate - 04 Acquiring Web Data - Introduction to Web Scraping.md",
+"DH Intermediate - 05 Text Analysis with NLTK - Tokenization and Stop Words.md",
+"DH Intermediate - 06 Frequency Distributions and Concordancing with NLTK.md",
+"DH Intermediate - 07 Stemming and Lemmatization with NLTK.md",
+"DH Intermediate - 08 Part-of-Speech Tagging with NLTK.md",
+"DH Intermediate - 09 Introduction to APIs and JSON.md",
+"DH Intermediate - 10 Working with an API - Chronicling America.md",
+"DH Intermediate - 11 Handling API Pagination and Rate Limiting.md",
+"DH Intermediate - 12 Fetching and Analyzing Content from API Results (OCR Text).md",
+"DH Intermediate - 13 Formative Exercises.md"
+],
+"3- Advanced Stream":["DH Advanced - 00 Start Here.md", "DH Advanced - 01 Vector Space Models and TF-IDF.md",
+"DH Advanced - 02 Introduction to Topic Modeling with LDA.md",
+"DH Advanced - 03 Named Entity Recognition (NER).md",
+"DH Advanced - 04 Introduction to Network Analysis.md",
+"DH Advanced - 05 Network Metrics and Community Detection.md",
+"DH Advanced - 06 Geocoding - Turning Place Names into Coordinates.md",
+"DH Advanced - 07 Geospatial Data Analysis with GeoPandas.md",
+"DH Advanced - 09 Introduction to Image Analysis Basics.md",
+"DH Advanced - 10 Measuring Visual Similarity.md",
+"DH Advanced - 11 Introduction to Audio Analysis Basics.md",
+"DH Advanced - 12 Data Sonification Principles and Techniques.md",
+"DH Advanced - 13 Formative Exercises.md",
+"DH Advanced - 14 Wrap-up and Further Directions.md"
+     ]
+	 }  
   }
 }
+
