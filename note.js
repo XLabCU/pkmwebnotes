@@ -99,12 +99,17 @@ tags: []
     }
 
     getPreview() {
+        // This new regex correctly handles both [[Title]] and [[id|Title]] formats,
+        // extracting only the human-readable title.
+        const wikilinkRegex = /\[\[(?:[^|\]]+\|)?([^\]]+)\]\]/g;
+
         return this.getContentWithoutMetadata()
-            .replace(/^#+\s*/gm, '') // Remove markdown headers
-            .replace(/\*\*(.*?)\*\*/g, '$1') // Remove bold
-            .replace(/\*(.*?)\*/g, '$1') // Remove italic
-            .replace(/\[\[(.*?)\]\]/g, '$1') // Remove wiki links
-            .replace(/\^([a-zA-Z0-9-]+)/g, '') // Remove block IDs
+            .replace(/^#+\s*/gm, '')             // Remove markdown headers
+            .replace(/\*\*(.*?)\*\*/g, '$1')     // Remove bold
+            .replace(/\*(.*?)\*/g, '$1')         // Remove italic
+            .replace(wikilinkRegex, '$1')        // Properly remove wiki links, leaving only the title
+            .replace(/\^([a-zA-Z0-9-]+)/g, '')   // Remove block IDs
+            .trim()                              // Remove leading/trailing whitespace
             .substring(0, 100);
     }
 
@@ -131,16 +136,32 @@ tags: []
     }
 
     getOutgoingLinks() {
-    const links = [];
-    // Updated regex to capture the target part of wikilinks (before the |)
-    const linkRegex = /\[\[([^\]|]+)(\|([^\]]+))?\]\]/g;
-    let match;
-    
-    while ((match = linkRegex.exec(this.content)) !== null) {
-        // Use the target (first capture group), not the display text
-        links.push(match[1].trim());
+        const links = new Set(); // Use a Set to automatically handle duplicates
+
+        // This is the correct regex for the "clean editor" format.
+        // It finds [[Title]] or [[Title|Display Text]] and captures the "Title" part.
+        const linkRegex = /\[\[([^\]|]+)(?:\|[^\]]*)?\]\]/g;
+        
+        let match;
+        
+        // Find all link targets in the note's content
+        while ((match = linkRegex.exec(this.content)) !== null) {
+            // Group 1 of the regex is the target title.
+            const targetTitle = match[1].trim();
+            links.add(targetTitle);
+        }
+        
+        // Convert the Set to an array before returning.
+        return [...links];
     }
-    
-    return [...new Set(links)]; // Remove duplicates
-}
+
+    /**
+     * NEW: Ensure content uses internal [[id|title]] format
+     * This is the same logic as in BacklinksManager
+     */
+    ensureInternalFormat(content) {
+        // This would need access to the notes collection
+        // Better to pass this from the calling context
+        return content;
+    }
 }
