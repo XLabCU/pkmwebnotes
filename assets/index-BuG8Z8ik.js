@@ -214,10 +214,12 @@ ${i.getContentWithoutMetadata()}
                         <li><b>Tabbed Interface:</b> Open and manage multiple notes in tabs.</li>
                         <li><b>Markdown Editor:</b> Real-time preview with syntax highlighting.</li>
                         <li><b>Wikilinks:</b> Create connections between notes using <code>[[Note Title]]</code>.</li>
+                        <li><b>Aliases for Links:</b> Create aliases for displayed link text using <code> [[Note Title/Display Text]]</code>.</li>
                         <li><b>Backlinks Panel:</b> See all notes that link to your current note.</li>
-                        <li><b>Code Execution:</b> Run Python code blocks directly within your notes.</li>
+                        <li><b>Code Execution:</b> Run Python code blocks directly within your notes via the Preview window.</li>
                         <li><b>Graph View:</b> Visualize the connections between your notes.</li>
                         <li><b>Local Storage:</b> Everything is saved directly in your browser.</li>
+                        <li><b>Portability:</b> Your notes and the graph of your linked thought can be exported as .md and .csv.</li>
                     </ul>
                 </div>
                 <div class="welcome-footer">
